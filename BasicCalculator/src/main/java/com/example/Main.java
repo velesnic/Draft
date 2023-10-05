@@ -51,16 +51,12 @@ public class Main {
     public static double AddTwoNumbers(double firstNumber, double secondNumber) {
         return firstNumber + secondNumber;
     }
-
-
     public static double SubtractTwoNumbers(double firstNumber, double secondNumber) {
         return firstNumber - secondNumber;
     }
-
     public static double MultiplyTwoNumbers(double firstNumber, double secondNumber) {
         return firstNumber * secondNumber;
     }
-
     public static double DivideTwoNumbers(double firstNumber, double secondNumber) {
         return firstNumber / secondNumber;
     }
