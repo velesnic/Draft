@@ -61,5 +61,4 @@ public class Main {
         return firstNumber / secondNumber;
     }
 
-
 }
