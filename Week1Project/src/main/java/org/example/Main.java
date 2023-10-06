@@ -38,10 +38,8 @@ public class Main {
 
         double monthlyInterestRate = (annualInterestRate / 12) / 100;
         double numberOfPayments = loanLength * 12;
-        double powerBase = 1 + monthlyInterestRate;
-        double powerExponentTwo = numberOfPayments -1;
-        double monthlyPayment = principalAmount * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / (Math.pow(1 + monthlyInterestRate, numberOfPayments - 1));
-        double totalInterest = monthlyPayment * numberOfPayments;
+        double monthlyPayment = principalAmount * (monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, numberOfPayments) / (Math.pow(1 + monthlyInterestRate, numberOfPayments - 1))));
+        double totalInterest = (monthlyPayment * numberOfPayments);
 
         System.out.printf(" Monthly Payment : %.2f", monthlyPayment);
         System.out.printf("   Total Interest Paid : %.2f", totalInterest);
