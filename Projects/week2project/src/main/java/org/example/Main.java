@@ -170,29 +170,25 @@ public static void handleCheckedOutBooks(Book[] bookArray) {
     scanner.nextLine();
     switch (displayCheckedOutBooksOptions){
         case"C":
-
-        for(Book book:bookArray){
-        System.out.println("Please verify your Username to check book back in. ");
-        String verifiedUserName=scanner.nextLine();
-        scanner.nextLine();
-        book.checkInBook();
-        break;
+            for(Book book:bookArray){
+                System.out.println("Please verify your Username to check book back in. ");
+                String verifiedUserName=scanner.nextLine();
+                scanner.nextLine();
+                book.checkInBook();
+                break;
         }
         break;
         case"X":
-
-        System.out.println("You are now returning to the Main Menu.");
-        displayMainMenu();
-        boolean isRunning=false;
+            System.out.println("You are now returning to the Main Menu.");
+            displayMainMenu();
+            boolean isRunning=false;
         break;
         case"E":
-
-        System.out.println("You are now exiting the Library.");
-        System.exit(0);
+            System.out.println("You are now exiting the Library.");
+            System.exit(0);
         break;
-default:
-
-        System.out.println("Please enter a valid input.");
+        default:
+            System.out.println("Please enter a valid input.");
         }
         }
 }
