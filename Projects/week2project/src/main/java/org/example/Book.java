@@ -3,7 +3,8 @@ package org.example;
 import java.util.Scanner;
 
 public class Book {
-
+    //The word book isn't necessarily needed in front of each property since the class name itself is book
+    //Small quibble
     private int bookId;
 
     private String bookIsbn;
@@ -60,6 +61,16 @@ public class Book {
         this.bookTitle = bookTitle;
         this.bookIsCheckedOut = bookIsCheckedOut;
         this.bookIsCheckedOutTo = bookIsCheckedOutTo;
+    }
+
+    //You could do the constructor like this for less typing since you know in the beginning it won't be checked out
+    //and it's not checked out to anyone
+    public Book(int id, String isbn, String title) {
+        this.bookId = id;
+        this.bookIsbn = isbn;
+        this.bookTitle = title;
+        this.bookIsCheckedOut = false;
+        this.bookIsCheckedOutTo = "";
     }
 
 

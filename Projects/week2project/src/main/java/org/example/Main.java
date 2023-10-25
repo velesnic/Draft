@@ -4,7 +4,14 @@ import javax.swing.*;
 import java.util.Scanner;
 
 import java.util.Arrays;
-
+/*
+Overall, good start. The check in does not seem to work and there are some extra
+scanner.readline() which forced me to have to hit enter after already inputting my data.
+I commented some of those out.
+Check in does not seem to function. It really should ask me for the id of the book to be checked in
+I think you were trying to make sure the person who checks it in is the same person who checked it out
+but that's not a requirement.
+ */
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, welcome to Velesnic Public Library. ");
@@ -40,7 +47,7 @@ public class Main {
         while (isRunning) {
             displayMainMenu();
 
-
+        //I like breaking things down into methods
             int homeScreenOption = Integer.parseInt(scanner.nextLine());
 
             switch (homeScreenOption) {
@@ -126,7 +133,7 @@ public static void handleAvailableBooks (Book [] bookArray) {
         String userName = scanner.nextLine();
         System.out.println("Enter Book ID to check out.");
         String selectedBookNumberStr = scanner.nextLine();
-        scanner.nextLine();
+        //scanner.nextLine();
         int selectedBookNumber = Integer.parseInt(selectedBookNumberStr);
         boolean bookFound = false;
 
@@ -136,13 +143,14 @@ public static void handleAvailableBooks (Book [] bookArray) {
                 book.setBookIsCheckedOutTo(userName);
                 System.out.println(book.getBookTitle() + " has been checked out by " + userName + ".");
                 bookFound = true;
-                break;
+
             }
         }
         if (!bookFound) {
             System.out.println("Please enter a valid option.");
         }
-
+        //You want to put the break at the end of the case statement or else it'll fall to the next
+            break;
         case 2:
             displayMainMenu();
             boolean isRunning = false;
@@ -167,7 +175,7 @@ public static void handleCheckedOutBooks(Book[] bookArray) {
     System.out.println("X) Return to Main Menu.");
     System.out.println("E) Exit Library.");
     String displayCheckedOutBooksOptions = scanner.nextLine();
-    scanner.nextLine();
+    //scanner.nextLine();
     switch (displayCheckedOutBooksOptions){
         case"C":
             for(Book book:bookArray){
