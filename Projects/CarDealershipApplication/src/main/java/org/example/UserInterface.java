@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class UserInterface {
     private Dealership dealership;
     public UserInterface(){
+        //I liked that you did all this here. That way you control how the dealership gets loaded.
         DealershipFileManager dealershipFileManager = new DealershipFileManager();
         this.dealership = dealershipFileManager.getDealership();
         display();
@@ -57,6 +58,7 @@ public class UserInterface {
                     case 9:
                         processRemoveVehicleRequest(dealership.getInventory());
                         break;
+                        //I thought you wanted me to put in 99?
                     case 0:
                         System.exit(0);
                         break;

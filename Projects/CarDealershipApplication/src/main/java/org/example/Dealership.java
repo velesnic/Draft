@@ -3,6 +3,8 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+//So the logic of filtering vehicles makes sense, but the Dealership class
+//should not be printing anything to the screen. That's the UserInterface's job.
 public class Dealership {
     private String name;
     private String address;
