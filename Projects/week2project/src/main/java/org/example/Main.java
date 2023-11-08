@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Hello, welcome to Velesnic Public Library. ");
         Scanner scanner = new Scanner(System.in);
 
-        Book[] bookArray = new Book[21];
+        Book[] bookArray = new Book[22];
 
         bookArray[0] = new Book(11111, "00-001", "The Demon King", false, "");
         bookArray[1] = new Book(11112, "00-002", "The Secrets of the Universe", false, "");
@@ -25,15 +25,15 @@ public class Main {
         bookArray[10] = new Book(11121, "10-003", "Why I Should Be a Millionaire", false, "");
         bookArray[11] = new Book(11122, "10-004", "The Art of Napping: A Comprehensive Study", false, "");
         bookArray[12] = new Book(11123, "10-005", "How to Rob a Bank", false, "");
-        bookArray[12] = new Book(11124, "10-006", "Why Men Deserve Nothing", false, "");
-        bookArray[13] = new Book(11125, "10-007", "Why Do Dallas Residents Drive so Bad: A Study", false, "");
-        bookArray[14] = new Book(11126, "10-008", "Biography of Bad Bunny", false, "");
-        bookArray[15] = new Book(11127, "10-009", "List of the Best TV Shows Ever", false, "");
-        bookArray[16] = new Book(11128, "11-000", "List of the Best Movies Ever", false, "");
-        bookArray[17] = new Book(11129, "11-001", "The Fault in Our Starships", false, "");
-        bookArray[18] = new Book(11130, "11-002", "Java Introduction, Tips, and Tricks", false, "");
-        bookArray[19] = new Book(11131, "11-003", "Why does Everyone Keep Moving to Texas: Please Stop, It's too Crowded", false, "");
-        bookArray[20] = new Book(11132, "11-004", "My Fingers Hurt From Typing So Much: Based on a True Story", false, "");
+        bookArray[13] = new Book(11124, "10-006", "Why Men Deserve Nothing", false, "");
+        bookArray[14] = new Book(11125, "10-007", "Why Do Dallas Residents Drive so Bad: A Study", false, "");
+        bookArray[15] = new Book(11126, "10-008", "Biography of Bad Bunny", false, "");
+        bookArray[16] = new Book(11127, "10-009", "List of the Best TV Shows Ever", false, "");
+        bookArray[17] = new Book(11128, "11-000", "List of the Best Movies Ever", false, "");
+        bookArray[18] = new Book(11129, "11-001", "The Fault in Our Starships", false, "");
+        bookArray[19] = new Book(11130, "11-002", "Java Introduction, Tips, and Tricks", false, "");
+        bookArray[20] = new Book(11131, "11-003", "Why does Everyone Keep Moving to Texas: Please Stop, It's too Crowded", false, "");
+        bookArray[21] = new Book(11132, "11-004", "My Fingers Hurt From Typing So Much: Based on a True Story", false, "");
 
 
         boolean isRunning = true;
@@ -117,16 +117,15 @@ public static void handleAvailableBooks (Book [] bookArray) {
     System.out.println("3) Exit Library.");
     Scanner scanner = new Scanner(System.in);
     int handleAvailableBooksOptionStr = scanner.nextInt();
-    scanner.nextLine();
 
     switch(handleAvailableBooksOptionStr) {
         case 1:
 
         System.out.println("Please enter your Username to continue.");
         String userName = scanner.nextLine();
+        scanner.nextLine();
         System.out.println("Enter Book ID to check out.");
         String selectedBookNumberStr = scanner.nextLine();
-        scanner.nextLine();
         int selectedBookNumber = Integer.parseInt(selectedBookNumberStr);
         boolean bookFound = false;
 
@@ -167,7 +166,6 @@ public static void handleCheckedOutBooks(Book[] bookArray) {
     System.out.println("X) Return to Main Menu.");
     System.out.println("E) Exit Library.");
     String displayCheckedOutBooksOptions = scanner.nextLine();
-    scanner.nextLine();
     switch (displayCheckedOutBooksOptions){
         case"C":
             for(Book book:bookArray){
