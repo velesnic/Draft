@@ -9,12 +9,17 @@ import java.util.Scanner;
 
 public class DealershipFileManager {
     private Dealership dealership;
+
+    //I think making this method static would be good, and also having a private constructor
+    //for DealershipFileManager
     public Dealership getDealership() {
         ArrayList<Vehicle> inventory = new ArrayList<>();
         try {
             FileInputStream fileInputStream = new FileInputStream("src/main/resources/inventory.csv");
             Scanner scanner = new Scanner(fileInputStream);
             scanner.nextLine();
+
+            //The inventory is empty by the time we get to this line. You don't add any cars to it until later.
             dealership= new Dealership("Velesnic Auto Company", "123 Rainbow Rd","816-123-1234", inventory);
             String input;
             while(scanner.hasNextLine()){
@@ -30,7 +35,10 @@ public class DealershipFileManager {
                 int odometer = Integer.parseInt(rowArray[6].trim());
                 double price = Double.parseDouble(rowArray[7].trim());
                 Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+                //How does this add the vehicle to the dealership?
                 inventory.add(vehicle);
+                //This would make more sense
+                dealership.addVehicle(vehicle);
             }
             fileInputStream.close();
         } catch (FileNotFoundException ex) {
