@@ -6,11 +6,12 @@ import java.util.Scanner;
     public class UserInterface {
             private Dealership dealership;
 
-            public UserInterface() {
-                DealershipFileManager dealershipFileManager = new DealershipFileManager();
-                this.dealership = dealershipFileManager.getDealership();
-                display();
-            }
+        public UserInterface() {
+            this.dealership = new Dealership("Velesnic Auto Company", "123 Rainbow Rd", "816-123-1234", new ArrayList<>());
+            DealershipFileManager dealershipFileManager = new DealershipFileManager(dealership);
+            this.dealership = dealershipFileManager.getDealership();
+            display();
+        }
 
 
         public void display(){
@@ -297,7 +298,6 @@ import java.util.Scanner;
             switch(userChoice){
                 case 1:
                     boolean isFinancing = false;
-                    System.out.println("Congrats on your new vehicle purchase!");
                     System.out.println("Did you want to apply for financing today?");
                     System.out.println("1. Yes.");
                     System.out.println("2. No.");
@@ -313,8 +313,8 @@ import java.util.Scanner;
                     }
                     System.out.println("What is your name?");
                     String buyerName = scanner.nextLine();
-                    System.out.println("Awesome " + buyerName + ", what is your email?");
                     scanner.nextLine();
+                    System.out.println("Awesome " + buyerName + ", what is your email?");
                     String buyerEmail = scanner.nextLine();
                     System.out.println("Ok and which car would you like to purchase today? Please enter the VIN.");
                     int buyerVin = scanner.nextInt();
@@ -351,6 +351,7 @@ import java.util.Scanner;
                 case 2:
                     System.out.println("What is your name?");
                     buyerName = scanner.nextLine();
+                    scanner.nextLine();
                     System.out.println("Awesome " + buyerName + ", what is your email?");
                     scanner.nextLine();
                     buyerEmail = scanner.nextLine();

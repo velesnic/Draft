@@ -10,6 +10,10 @@ public class DealershipFileManager {
 
     private Dealership dealership;
 
+    public DealershipFileManager(Dealership dealership) {
+        this.dealership = dealership;
+    }
+
     public Dealership getDealership() {
         ArrayList<Vehicle> inventory = new ArrayList<>();
         try {
