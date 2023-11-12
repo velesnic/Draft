@@ -323,6 +323,7 @@ import java.util.Scanner;
                             if(buyerVin == vehicle.getVin()){
                                 System.out.println("Please enter date in the format of MM/DD/YYYY.");
                                 String buyerDate = scanner.nextLine();
+                                scanner.nextLine();
                                 SalesContract salesContract = new SalesContract(buyerDate, buyerName, buyerEmail, vehicle, true);
                                 System.out.println("Congrats on your new vehicle purchase.");
                                 System.out.println("Total price: " + salesContract.getTotalPrice());
@@ -338,6 +339,7 @@ import java.util.Scanner;
                             if(buyerVin == vehicle.getVin()){
                                 System.out.println("Please enter date in the format of MM/DD/YYYY.");
                                 String buyerDate = scanner.nextLine();
+                                scanner.nextLine();
                                 SalesContract salesContract = new SalesContract(buyerDate, buyerName, buyerEmail, vehicle, false);
                                 System.out.println("Congrats on your new vehicle purchase big baller!");
                                 System.out.println("Total price: " + salesContract.getTotalPrice());
@@ -353,14 +355,15 @@ import java.util.Scanner;
                     buyerName = scanner.nextLine();
                     scanner.nextLine();
                     System.out.println("Awesome " + buyerName + ", what is your email?");
-                    scanner.nextLine();
                     buyerEmail = scanner.nextLine();
+                    scanner.nextLine();
                     System.out.println("Ok and which car would you like to lease today? Please enter the VIN.");
                     buyerVin = scanner.nextInt();
                     for(Vehicle vehicle : dealership.getInventory()){
                         if(buyerVin == vehicle.getVin()){
                             System.out.println("Please enter date in the format of MM/DD/YYYY.");
                             String buyerDate = scanner.nextLine();
+                            scanner.nextLine();
                             LeaseContract leaseContract = new LeaseContract(buyerDate, buyerName, buyerEmail, vehicle);
                             System.out.println("Congrats on your new Lease!");
                             System.out.println("Monthly Payment: " + leaseContract.getMonthlyPayment());
