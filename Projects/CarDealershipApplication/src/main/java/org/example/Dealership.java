@@ -49,112 +49,65 @@ public class Dealership {
     }
 
     public void getVehiclesByPrice(double minimum, double maximum) {
-        boolean hasVehicles = false;
         for (Vehicle vehicle : inventory) {
             if (vehicle.getPrice() >= minimum && vehicle.getPrice() <= maximum) {
                 System.out.println(vehicle);
-                hasVehicles = true;
             }
-        }
-        if (!hasVehicles) {
-            System.out.println("There are no vehicles within that price range.");
         }
     }
 
     public void getVehiclesByMakeModel(String userMake, String userModel) {
-        boolean hasVehicles = false;
         for (Vehicle vehicle : inventory) {
             if (vehicle.getMake().equalsIgnoreCase(userMake) && vehicle.getModel().equalsIgnoreCase(userModel)) {
-                hasVehicles = true;
                 System.out.println(vehicle);
             }
-        }
-        if (!hasVehicles) {
-            System.out.println("No vehicles match the make and model given.");
         }
     }
 
     public void getVehiclesByYear(int minimum, int maximum){
-        boolean hasVehicles = false;
         for(Vehicle vehicle : inventory){
             if(vehicle.getYear() >= minimum && vehicle.getYear() <= maximum){
-                hasVehicles = true;
                 System.out.println(vehicle);
-            }
-            if(!hasVehicles){
-                System.out.println("No vehicles fit the dates given.");
             }
         }
     }
 
     public void getVehiclesByColor(String userColor){
-        boolean hasVehicles = false;
         for(Vehicle vehicle : inventory){
             if(vehicle.getColor().equalsIgnoreCase(userColor)){
-                hasVehicles = true;
                 System.out.println(vehicle);
-            }
-            if(!hasVehicles){
-                System.out.println("No vehicles with that color.");
             }
         }
     }
 
     public void getVehiclesByMileage(int minimum, int maximum){
-        boolean hasVehicles = false;
         for(Vehicle vehicle : inventory){
             if(vehicle.getOdometer() >= minimum && vehicle.getOdometer() <= maximum){
-                hasVehicles = true;
                 System.out.println(vehicle);
-            }
-            if(!hasVehicles){
-                System.out.println("No vehicles within that mileage.");
             }
         }
     }
 
     public void getVehiclesByType(String userVehicleType){
-        boolean hasVehicles = false;
         for(Vehicle vehicle : inventory){
             if(vehicle.getVehicleType().equalsIgnoreCase(userVehicleType)){
-                hasVehicles = true;
                 System.out.println(vehicle);
-            }
-            if(!hasVehicles){
-                System.out.println("No vehicles with that body type.");
             }
         }
     }
 
     public void getAllVehicles() {
-        if (inventory.isEmpty()) {
-            System.out.println("No vehicles available.");
-        } else {
             for (Vehicle vehicle : inventory) {
                 System.out.println(vehicle);
             }
-        }
     }
 
     public void addVehicle(Vehicle vehicle){
-        try {
             inventory.add(vehicle);
-        }
-        catch(Exception ex){
-            System.out.println("Error adding vehicle.");
-            ex.printStackTrace();
-        }
-
     }
 
     public void removeVehicle(Vehicle vehicle){
-       try{
            inventory.remove(vehicle);
-       }
-       catch(Exception ex){
-           System.out.println("Error removing vehicle.");
-           ex.printStackTrace();
-       }
     }
 
 }

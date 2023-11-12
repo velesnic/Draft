@@ -6,16 +6,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class DealershipFileManager {
+
     private Dealership dealership;
+
     public Dealership getDealership() {
         ArrayList<Vehicle> inventory = new ArrayList<>();
         try {
             FileInputStream fileInputStream = new FileInputStream("src/main/resources/inventory.csv");
             Scanner scanner = new Scanner(fileInputStream);
             scanner.nextLine();
-            dealership= new Dealership("Velesnic Auto Company", "123 Rainbow Rd","816-123-1234", inventory);
             String input;
             while(scanner.hasNextLine()){
                 input = scanner.nextLine();
@@ -31,6 +31,7 @@ public class DealershipFileManager {
                 double price = Double.parseDouble(rowArray[7].trim());
                 Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
                 inventory.add(vehicle);
+                dealership.addVehicle(vehicle);
             }
             fileInputStream.close();
         } catch (FileNotFoundException ex) {
