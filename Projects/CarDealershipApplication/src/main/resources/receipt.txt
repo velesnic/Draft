@@ -1,1 +1,2 @@
 
+Date:  | Name :  | Email: johniscool@yahoo.com | VIN: 10117 | Year: 2019 | Make: Dodge | Model: Charger | Type: Car | Color: Blue | SalesTax: 1150.00 | RecordingFee: 100.00 | ProcessingFee: 495.00 | Total: 24745.00 | Financed: no | MonthlyPayment: 0.00
